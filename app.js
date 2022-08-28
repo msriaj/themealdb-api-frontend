@@ -24,7 +24,7 @@ const displayFoodList = (foods) => {
                                 
                                 </div>
 
-                            <button type="button" class="btn btn-warning mx-5 mb-2 fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick="loadDetails(${food.idMeal})">
+                            <button type="button" class="btn btn-warning mx-5 mb-4 fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick="loadDetails(${food.idMeal})">
                                 See More Details
                             </button>
                     </div>
@@ -36,8 +36,9 @@ const displayFoodList = (foods) => {
 
 document.getElementById("searchbtn").addEventListener("click", () => {
     const searchKey = document.getElementById("search-box").value;
-    console.log(searchKey);
+
     loadFood(searchKey);
+    document.getElementById("search-box").value = "";
 })
 
 

@@ -17,9 +17,12 @@ img {
     border-radius: 2rem;
     border: none;
     font-weight: 600;
+    margin-top: 1rem;
 
 }
 
 .search-box {
     box-shadow: 10px 10px 10px #ddd;
+    min-width: 50%;
+    border: salmon 2px solid;
 }
