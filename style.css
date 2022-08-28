@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+.search-btn,
+.search-box {
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: none;
+    font-weight: 600;
+
+}
+
+.search-box {
+    box-shadow: 10px 10px 10px #ddd;
+}
