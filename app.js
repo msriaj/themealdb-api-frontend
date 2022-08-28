@@ -1,6 +1,6 @@
 const loadFood = keyword => {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${keyword}`;
-    console.log(url);
+
     fetch(url)
         .then(res => res.json())
         .then(data => displayFoodList(data.meals))
@@ -14,7 +14,7 @@ const displayFoodList = (foods) => {
 
         const foodDiv = document.createElement("div");
         foodDiv.classList.add("col");
-        console.log(food);
+
         foodDiv.innerHTML = `
                    <div class="card shadow-lg border-0 bg-dark">
                             <img src="${food.strMealThumb}" class="card-img-top" alt="...">
