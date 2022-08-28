@@ -1,9 +1,10 @@
 const loadFood = keyword => {
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${keyword}`;
-    console.log(keyword);
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${keyword}`;
+    console.log(url);
     fetch(url)
         .then(res => res.json())
         .then(data => displayFoodList(data.meals))
+        .then(error => console.log(error))
 }
 
 const displayFoodList = (foods) => {
@@ -15,14 +16,15 @@ const displayFoodList = (foods) => {
         foodDiv.classList.add("col");
         console.log(food);
         foodDiv.innerHTML = `
-                   <div class="card shadow-lg border-0">
+                   <div class="card shadow-lg border-0 bg-dark">
                             <img src="${food.strMealThumb}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">${food.strMeal}</h5>
-                                <p class="card-text"> ${food.strInstructions.slice(0, 100)}</p>
-                            </div>
+                                <h5 class="card-title text-white text-center my-2">${food.strMeal} <span class="text-info"> (${food.strArea})</span></h5>
+                                 
+                                
+                                </div>
 
-                            <button type="button" class="btn btn-warning mx-5 my-3 fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick="loadDetails(${food.idMeal})">
+                            <button type="button" class="btn btn-warning mx-5 mb-2 fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick="loadDetails(${food.idMeal})">
                                 See More Details
                             </button>
                     </div>
@@ -60,4 +62,4 @@ const displayFoodDetails = details => {
     `
 
 }
-loadFood("s");
+loadFood("");
